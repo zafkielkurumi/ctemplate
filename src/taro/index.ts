@@ -31,7 +31,6 @@ export function taro(options: Schema): Rule {
       applyTemplates({
         ...strings,
         ...options,
-        name: options.page ? options.name + 'Page' : options.name
       }),
       move(parsedPath.path)
     ]);
