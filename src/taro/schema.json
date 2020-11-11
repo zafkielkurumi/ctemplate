@@ -1,0 +1,58 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchematicsGoodByeWorld",
+    "title": "MGoodByeWorld Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "文件名称",
+        "type": "string",
+        "minLength": 1,
+        "x-prompt": "输入文件名称"
+      },
+      "page": {
+        "type": "boolean",
+        "default": true,
+        "x-prompt": "是否为页面(default true)"
+      },
+      "frame": {
+        "type": "string",
+        "enum": [
+          "React",
+          "Nerv"
+        ],
+        "x-prompt": "选择框架"
+      },
+      "fc": {
+        "default": true,
+        "type": "boolean",
+        "x-prompt": "是否为函数式?"
+      },
+      "style": {
+        "type": "string",
+        "enum": [
+          "none",
+          "css",
+          "scss",
+          "sass",
+          "less",
+          "styl"
+        ],
+        "x-prompt": {
+          "message": "选择css预处理器",
+          "type": "list",
+          "items": [
+            { "value": "none",  "label": "无" },
+            { "value": "css",  "label": "CSS" },
+            { "value": "scss", "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]" },
+            { "value": "sass", "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]" },
+            { "value": "less", "label": "Less   [ http://lesscss.org                                             ]" },
+            { "value": "styl", "label": "Stylus [ http://stylus-lang.com                                         ]" }
+          ]
+        }
+      }
+     },
+    "required": [
+      "name"
+    ]
+  }

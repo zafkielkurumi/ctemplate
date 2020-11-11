@@ -1,0 +1,14 @@
+{
+  "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
+  "schematics": {
+    "ctemplate": {
+      "description": "A blank schematic.",
+      "factory": "./ctemplate/index#ctemplate"
+    },
+    "taro": {
+      "description": "A blank schematic.",
+      "factory": "./taro/index#taro",
+      "schema": "./taro/schema.json"
+    }
+  }
+}
