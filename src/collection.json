@@ -6,9 +6,14 @@
       "factory": "./ctemplate/index#ctemplate"
     },
     "taro": {
-      "description": "A blank schematic.",
+      "description": "A taro3 schematic.",
       "factory": "./taro/index#taro",
       "schema": "./taro/schema.json"
+    },
+    "ng-test": {
+      "description": "A blank schematic.",
+      "factory": "./ng-test/index#ngTest",
+      "aliases": ["ngtest"]
     }
   }
 }
