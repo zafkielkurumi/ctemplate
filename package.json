@@ -4,9 +4,9 @@
   "description": "A blank schematics",
   "scripts": {
     "build": "tsc -p tsconfig.json",
-    "delete:files": "rm -r -f bin/src/*/files",
+    "delete:files": "rm -r -f bin/src/*/files/*",
     "copy:schemas": "cp --parents -p src/*/schema.json bin/",
-    "copy:files": "cp --parents -p src/*/files/**  bin/",
+    "copy:files": "cp --parents -p -r -f src/*/files/**  bin/",
     "copy:collection": "cp  src/collection.json bin/src/collection.json",
     "copy:package": "cp  package.json bin/package.json",
     "postbuild": "npm run delete:files && npm run copy:schemas && npm run copy:files && npm run copy:collection && npm run copy:package"
