@@ -19,6 +19,11 @@
       "description": "A ng core module schematic. http and error handler",
       "factory": "./ng-core/index#ngCore",
       "aliases": ["ngcore"]
+    },
+    "vue": {
+      "description": "A vue schematic.",
+      "factory": "./vue/index#vue",
+      "schema": "./vue/schema.json"
     }
   }
 }

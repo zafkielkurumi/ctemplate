@@ -20,7 +20,7 @@ import { parseName } from "../utils/parseName";
 
 // You don't have to export the function as default. You can also have more than one rule factory
 // per file.
-export function taro(options: Schema): Rule {
+export function vue(options: Schema): Rule {
   return (tree: Tree, _context: SchematicContext) => {
     const parsedPath = parseName(tree.root.path, options.name);
     options.name = parsedPath.name;
@@ -29,9 +29,6 @@ export function taro(options: Schema): Rule {
       options.style === "none"
         ? filter((path) => !path.endsWith("__style__.template"))
         : noop(),
-      options.page
-        ? noop()
-        : filter((path) => !path.endsWith("config.ts.template")),
       applyTemplates({
         ...strings,
         ...options,

@@ -1,17 +1,16 @@
-import <%if(frame === 'React'){%>React<% } else {%> Nerv<% } %>, { <% if(fc) { %> FC <% } else { %> Component <% } %>,  } from '<% if(frame === 'React') { %> react <% } else {%> nervjs <% } %>';
-import Nerv, { Component } from 'nervjs'
+import <%if(frame === 'React'){%>React<% } else {%> Nerv<% } %>, { <% if(fc) { %> FC <% } else { %> Component <% } %>,  } from '<% if(frame === 'React') { %>react<% } else {%>nervjs<% } %>';
 import { View } from '@tarojs/components';
 <% if(style !== 'none') {%>import './<%= classify(name) %>.<%= style %>'; <%}%>
 
 
 <% if(fc){ %>
 export const <%= classify(name) %>: FC = ({}) => {
-    return (<View></View>)
+    return (<View className="<%= classify(name) %>"></View>)
 }
 <% } else { %>
 export class <%= classify(name) %> extends Component {
     render() {
-        return (<View></View>);
+        return (<View className="<%= classify(name) %>"></View>);
     }
 } <% } %>
 

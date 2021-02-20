@@ -1,0 +1,48 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchematicsVue",
+    "title": "Vue Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "文件名称",
+        "type": "string",
+        "minLength": 1,
+        "x-prompt": "输入文件名称"
+      },
+      "target": {
+        "type": "string",
+        "enum": [
+          "uniApp",
+          "vueTs"
+        ],
+        "x-prompt": "选择框架"
+      },
+      "style": {
+        "type": "string",
+        "enum": [
+          "none",
+          "css",
+          "scss",
+          "sass",
+          "less",
+          "styl"
+        ],
+        "x-prompt": {
+          "message": "选择css预处理器",
+          "type": "list",
+          "items": [
+            { "value": "none",  "label": "无" },
+            { "value": "css",  "label": "CSS" },
+            { "value": "scss", "label": "SCSS   [ https://sass-lang.com/documentation/syntax#scss                ]" },
+            { "value": "sass", "label": "Sass   [ https://sass-lang.com/documentation/syntax#the-indented-syntax ]" },
+            { "value": "less", "label": "Less   [ http://lesscss.org                                             ]" },
+            { "value": "styl", "label": "Stylus [ http://stylus-lang.com                                         ]" }
+          ]
+        }
+      }
+     },
+    "required": [
+      "name"
+    ]
+  }

@@ -1,0 +1,39 @@
+<template>
+  <div class="<%= classify(name) %>">
+    <%= classify(name) %>
+  </div>
+</template>
+
+<% if(target === 'uniApp'){ %>
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  data() {
+    return {};
+  },
+  onLoad() {},
+  methods: {},
+});
+</script>
+
+<% } else { %>
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+
+@Component({})
+export class <%= classify(name) %> extends Vue {}
+export default <%= classify(name) %>
+</script>
+
+ <% } %>
+
+
+<style lang="scss">
+@import "./<%= classify(name) %>.<%= style%>"
+</style>
+
+
+
+
+
