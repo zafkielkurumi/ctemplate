@@ -14,9 +14,18 @@
         "type": "string",
         "enum": [
           "uniApp",
-          "vueTs"
+          "vue2ts",
+          "vue3ts"
         ],
-        "x-prompt": "选择框架"
+        "x-prompt": {
+          "message": "选择版本",
+          "type": "list",
+          "items": [
+            { "value": "uniApp",  "label": "uniApp" },
+            { "value": "vue2ts",  "label": "vue2ts" },
+            { "value": "vue3ts", "label": "vue3ts"}
+          ]
+        }
       },
       "style": {
         "type": "string",

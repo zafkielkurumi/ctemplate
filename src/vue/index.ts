@@ -13,6 +13,7 @@ import {
   filter,
   noop,
   move,
+  formats
 } from "@angular-devkit/schematics";
 import { Schema } from "./schema";
 import { validateName } from "../utils/validate";
@@ -29,6 +30,8 @@ export function vue(options: Schema): Rule {
       options.style === "none"
         ? filter((path) => !path.endsWith("__style__.template"))
         : noop(),
+      options.target !== 'vue3ts' ? filter((path) => !path.endsWith("ts.template"))
+      : noop(),
       applyTemplates({
         ...strings,
         ...options,
