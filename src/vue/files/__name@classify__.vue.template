@@ -30,11 +30,17 @@ export default class <%= classify(name) %> extends Vue {
 <% }%>
 
 <% if(target === 'vue3ts'){ %>
-<script lang="ts"></script>
+<script lang="ts">
+import { defineComponent } from "vue"
+
+export default defineComponent({
+  name: '<%= classify(name) %>',
+})
+</script>
 <% }%>
 
 <style lang="scss" scoped>
-@import "./<%= classify(name) %>.<%= style%>"
+@import "./<%= classify(name) %>.<%= style%>";
 </style>
 
 
