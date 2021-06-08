@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/schema",
+    "id": "SchematicsFlutter",
+    "title": "Flutter Schema",
+    "type": "object",
+    "properties": {
+      "name": {
+        "description": "文件名称",
+        "type": "string",
+        "minLength": 1,
+        "x-prompt": "输入文件名称"
+      },
+      "state": {
+        "default": true,
+        "type": "boolean",
+        "x-prompt": "是否为StatefulWidget?"
+      }
+     },
+    "required": [
+      "name"
+    ]
+  }

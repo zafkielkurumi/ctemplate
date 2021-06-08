@@ -24,6 +24,11 @@
       "description": "A vue schematic.",
       "factory": "./vue/index#vue",
       "schema": "./vue/schema.json"
+    },
+    "flutter": {
+      "description": "A flutter schematic.",
+      "factory": "./flutter/index#flutter",
+      "schema": "./flutter/schema.json"
     }
   }
 }

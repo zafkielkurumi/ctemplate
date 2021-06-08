@@ -1,0 +1,33 @@
+import 'package:flutter/material.dart';
+
+<% if(state){ %>
+class <%= classify(name) %> extends StatefulWidget {
+  const <%= classify(name) %>({ Key? key }) : super(key: key);
+
+  @override
+  _<%= classify(name) %> createState() => _<%= classify(name) %>();
+}
+
+class _<%= classify(name) %> extends State<<%= classify(name) %>> {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
+  }
+}
+<% } else { %>
+class <%= classify(name) %> extends StatelessWidget {
+  const <%= classify(name) %>({ Key? key }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      
+    );
+  }
+} <% } %>
+
+
+
+
