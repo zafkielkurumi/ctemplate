@@ -1,4 +1,5 @@
 <%if(isPage){%>import 'package:ff_annotation_route_core/ff_annotation_route_core.dart';<%}%>
+<%if(isPage){%>@FFArgumentImport()<%}%>
 import 'package:flutter/material.dart';
 
 <%if(isPage){%>
