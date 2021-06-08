@@ -1,5 +1,12 @@
+<%if(isPage){%>import 'package:ff_annotation_route_core/ff_annotation_route_core.dart';<%}%>
 import 'package:flutter/material.dart';
 
+<%if(isPage){%>
+@FFRoute(
+  name: "<%=camelize(name)%>",
+  routeName: "<%=camelize(name)%>",
+)
+<%}%>
 <% if(state){ %>
 class <%= classify(name) %> extends StatefulWidget {
   const <%= classify(name) %>({ Key? key }) : super(key: key);

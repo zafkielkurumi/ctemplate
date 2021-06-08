@@ -14,6 +14,11 @@
         "default": true,
         "type": "boolean",
         "x-prompt": "是否为StatefulWidget?"
+      },
+      "isPage": {
+        "default": true,
+        "type": "boolean",
+        "x-prompt": "是否为页面,y是,页面会添加ff_route"
       }
      },
     "required": [
