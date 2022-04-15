@@ -10,11 +10,6 @@
       "factory": "./taro/index#taro",
       "schema": "./taro/schema.json"
     },
-    "ng-test": {
-      "description": "A blank schematic.",
-      "factory": "./ng-test/index#ngTest",
-      "aliases": ["ngtest"]
-    },
     "ng-core": {
       "description": "A ng core module schematic. http and error handler",
       "factory": "./ng-core/index#ngCore",

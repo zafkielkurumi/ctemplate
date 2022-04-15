@@ -1,6 +1,6 @@
 {
-    "$schema": "http://json-schema.org/schema",
-    "id": "SchematicsTaro",
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "SchematicsTaro",
     "title": "Taro Schema",
     "type": "object",
     "properties": {

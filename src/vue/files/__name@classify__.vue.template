@@ -1,49 +1,60 @@
 <template>
-  <div class="<%= classify(name) %>">
-    <%= classify(name) %>
-  </div>
+    <% if(target !== 'vue3'){ %>
+    <div class="<%= classify(name) %>"><%= classify(name) %></div>
+    <% }%> <% if(target === 'vue3'){ %> <%= classify(name) %> <% }%>
 </template>
 
-<% if(target === 'uniApp'){ %>
-<script lang="ts">
-import Vue from "vue";
+<% if(lan === 'ts'){ %>
+  <% if(target === 'uniApp'){ %>
+    <script lang="ts">
+        import Vue from "vue";
+    
+        export default Vue.extend({
+            data() {
+                return {};
+            },
+            onLoad() {},
+            methods: {},
+        });
+    </script>
+  <% }%> 
 
-export default Vue.extend({
-  data() {
-    return {};
-  },
-  onLoad() {},
-  methods: {},
-});
-</script>
-<% }%>
+  <% if(target === 'vue2'){ %>
+    <script lang="ts">
+        import { Component, Vue } from "vue-property-decorator";
+    
+        @Component({})
+        export default class <%= classify(name) %> extends Vue {
+          name: '<%= classify(name) %>'
+        }
+    </script>
+  <% }%> 
 
-<% if(target === 'vue2ts'){ %>
-<script lang="ts">
-import { Component, Vue } from "vue-property-decorator";
-
-@Component({})
-export default class <%= classify(name) %> extends Vue {
-  name: '<%= classify(name) %>'
-}
-</script>
-<% }%>
-
-<% if(target === 'vue3ts'){ %>
-<script lang="ts">
-import { defineComponent } from "vue"
-
-export default defineComponent({
-  name: '<%= classify(name) %>',
-})
-</script>
-<% }%>
+  <% if(target === 'vue3'){ %>
+    <script setup lang="ts">
+      import { ref, onMounted } from 'vue';
+    </script>
+    <% }%>
+<% }%> 
+<% if(lan === 'js'){ %>
+  <% if(target === 'uniApp' || target === 'vue2'){ %>
+    <script>
+        export default {
+            data() {
+                return {};
+            },
+            onLoad() {},
+            methods: {},
+        };
+    </script>
+  <% }%>
+  <% if(target === 'vue3'){ %>
+    <script setup>
+      import { ref, onMounted } from 'vue';
+    </script>
+  <% }%> 
+<% }%> 
 
 <style lang="scss" scoped>
-@import "./<%= classify(name) %>.<%= style%>";
+    @import "./<%= classify(name) %>.<%= style%>";
 </style>
-
-
-
-
-
