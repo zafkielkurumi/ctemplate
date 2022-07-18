@@ -27,6 +27,22 @@
           ]
         }
       },
+      "formateName": {
+        "type": "string",
+        "enum": [
+          "camelize",
+          "classify"
+        ],
+        "default": "classify",
+        "x-prompt": {
+          "message": "文件名格式化方式",
+          "type": "list",
+          "items": [
+            { "value": "classify",  "label": "classify" },
+            { "value": "camelize",  "label": "camelize" }
+          ]
+        }
+      },
       "lan": {
         "type": "string",
         "enum": [
@@ -44,6 +60,7 @@
       },
       "style": {
         "type": "string",
+        "default": "scss",
         "enum": [
           "none",
           "css",

@@ -23,8 +23,10 @@ import { parseName } from "../utils/parseName";
 // per file.
 export function vue(options: Schema): Rule {
   return (tree: Tree, _context: SchematicContext) => {
-    const parsedPath = parseName(tree.root.path, options.name);
+    const formate = options.formateName;
+    const parsedPath = parseName(tree.root.path, options.name, false, formate);
     options.name = parsedPath.name;
+   
     validateName(options.name);
     const templateSource = apply(url("./files"), [
       options.style === "none"
@@ -32,11 +34,12 @@ export function vue(options: Schema): Rule {
         : noop(),
       options.target !== 'vue3ts' ? filter((path) => !path.endsWith("ts.template"))
       : noop(),
+      filter(path => path.includes(formate)),
       applyTemplates({
         ...strings,
         ...options,
       }),
-      move(strings.classify(parsedPath.path)),
+      move(parsedPath.path),
     ]);
     return chain([mergeWith(templateSource)]);
   };
